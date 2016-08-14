@@ -4,10 +4,11 @@
   "description": "Euler Solutions in js et al",
   "main": "index.js",
   "dependencies": {
-    "ramda": "^0.22.1",
-    "standard": "^7.1.2"
+    "ramda": "^0.22.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+      "standard": "^7.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
