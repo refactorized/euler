@@ -58,12 +58,34 @@ so a complete test of partnership would be:
 
 ### partners in a given range
 
-I could be understood that, as an additional stipulation, x and y must *both* be less
+It could be understood that, as an additional stipulation, x and y must *both* be less
 than some limit, because the problem is looking for the sum of all 'amicable'
 **pairs** under that limit.  Ensuring this requires a more complex solution
 that can be tackled in a variety of ways
 
-### partnered mappings
+### divisorSum Transform
+
+This will simply be a integer -> integer transform that behaves exactly as
+described, yet can also be further functionally decomposed:
+
+- create a list of all quotients of n from 1 to n-1
+- filter the list to integers (n === floor(n))
+- sum the list
+
+Testing for proper divisors is expensive and could be sped up with various strategies
+out of scope for this solution.  One such strategy only searches up to the
+square root of n, returning both the quotient and n whenever a proper divisor
+is encountered
+
+## The only variable that matters
+
+10000 in this case defines the upper limit of the pairs, so any candidate number
+and its pair, must be below 100000 - so a properly constructed function
+should be as simple as solutionFn(10000)
+
+## Addendum partnered mappings
+
+*the following considerations are not part of the current solution*
 
 if we use f(x) to first create a map of [x, f(x)] we can interpret the above
 predicate in a slightly different manner.  given a collection of key value mappings we could define partnership as
@@ -89,22 +111,4 @@ establish that the transformed number is not out of range.  This is a tradeoff
 we make for the sake of readability, reasonability but if it is truly expensive,
 we can simply memoize f(x)  
 
-### divisorSum Transform
 
-This will simply be a integer -> integer transform that behaves exactly as
-described, yet can also be further functionally decomposed:
-
-- create a list of all quotients of n from 1 to n-1
-- filter the list to integers (n === floor(n))
-- sum the list
-
-Testing for proper divisors is expensive and could be sped up with various strategies
-out of scope for this solution.  One such strategy only searches up to the
-square root of n, returning both the quotient and n whenever a proper divisor
-is encountered
-
-## The only variable that matters
-
-10000 in this case defines the upper limit of the pairs, so any candidate number
-and its pair, must be below 100000 - so a properly constructed function
-should be as simple as solutionFn(10000)
