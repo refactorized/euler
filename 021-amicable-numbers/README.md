@@ -41,7 +41,7 @@ The original solution can be found as original-solution.js, and solution.js has
 been simplified and refactored with appropriate names.  
 
 **solution.js** has also been cleaned up considerably and, while simpler, also
-exhibits much better functional style. 
+exhibits much better functional style.
 
 ### hasPartner Predicate of scalars
 

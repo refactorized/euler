@@ -1,9 +1,9 @@
 const r = require('ramda')
 
 // simple predicate
-const divisorFor = n => m => Math.floor(n / m) === n / m
+const divisorFor = n => m => n % m === 0
 
-// scalar -> vector
+// scalar -> list
 const rangeFor = n => r.range(1, n) // not super necessary, but nice
 const divisorsOf = n => r.filter(divisorFor(n), rangeFor(n))
 
