@@ -2,7 +2,7 @@ const r = require('ramda')
 
 const isInt = n => Math.floor(n) === n
 
-// not point-free, but still a pure function
+// not point-free on the inside, but it's a pure function and can be used point-free
 function getDivisorsFor (n) {
   const divisors = [1] // one is always a divisor
   const sqrt = Math.sqrt(n)
